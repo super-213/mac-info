@@ -1,0 +1,66 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mac-info-tool"
+version = "0.1.0"
+description = "A macOS terminal monitoring tool for system performance metrics / macOS 终端监控工具，用于系统性能指标"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "mac-info-tool contributors"}
+]
+keywords = ["macOS", "monitoring", "system", "performance", "terminal", "cpu", "memory", "process"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: MacOS",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: System :: Monitoring",
+    "Topic :: System :: Systems Administration",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "psutil>=5.9.0,<6.0.0",
+    "rich>=13.0.0,<14.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "hypothesis>=6.0.0,<7.0.0",
+    "pytest>=7.0.0,<8.0.0",
+    "pytest-cov>=4.0.0,<5.0.0",
+]
+quality = [
+    "black>=24.0.0",
+    "flake8>=7.0.0",
+    "mypy>=1.8.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/mac-info-tool"
+Documentation = "https://github.com/yourusername/mac-info-tool#readme"
+Repository = "https://github.com/yourusername/mac-info-tool"
+Issues = "https://github.com/yourusername/mac-info-tool/issues"
+
+[project.scripts]
+mac-info = "mac_info.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --cov=mac_info --cov-report=term-missing"

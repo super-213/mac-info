@@ -1,0 +1,33 @@
+# mac-info-tool Requirements
+# 
+# Core dependencies for running mac-info-tool
+# 核心依赖项用于运行 mac-info-tool
+
+# System and process monitoring
+# 系统和进程监控
+psutil==5.9.8
+
+# Terminal formatting and display
+# 终端格式化和显示
+rich==13.7.0
+
+# Development Dependencies
+# 开发依赖项
+# Install with: pip install -r requirements.txt -r requirements-dev.txt
+# 安装命令：pip install -r requirements.txt -r requirements-dev.txt
+
+# Property-based testing
+# 基于属性的测试
+hypothesis==6.98.3
+
+# Testing framework
+# 测试框架
+pytest==7.4.4
+pytest-cov==4.1.0
+
+# Code quality tools
+# 代码质量工具
+# black==24.1.1
+# flake8==7.0.0
+# mypy==1.8.0
+

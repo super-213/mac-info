@@ -1,0 +1,28 @@
+#!/usr/bin/env python3
+"""
+mac-info 可执行脚本
+mac-info Executable Script
+
+该脚本提供 mac-info 命令的直接执行方式。
+This script provides direct execution for the mac-info command.
+
+使用方法 / Usage:
+    ./mac-info [command] [options]
+    
+示例 / Examples:
+    ./mac-info help
+    ./mac-info monitor --refresh 5
+    ./mac-info top
+"""
+
+import sys
+import os
+
+# 将 src 目录添加到 Python 路径
+# Add src directory to Python path
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
+
+from mac_info.__main__ import main
+
+if __name__ == '__main__':
+    main()
