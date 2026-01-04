@@ -49,3 +49,5 @@ htmlcov/
 # Project specific
 *.log
 .mac-info-cache/
+._*          # macOS resource forks
+.DS_Store    # macOS folder metadata
